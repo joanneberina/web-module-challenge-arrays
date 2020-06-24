@@ -146,6 +146,16 @@ Your function should accept:
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
+// This first solution is returning an empty array.
+// function copy(arrayCopy, originalArray){
+//     arrayCopy = [...originalArray] 
+//     return arrayCopy;
+// }
+// let copy1 = []; // rename the new copy
+// copy(copy1, originalFlavors);
+// console.log("Copy of array:", copy1);
+
+
 function copy(arrayCopy, originalArray){
 
     for (i = 0; i < originalArray.length; i++) {
@@ -153,7 +163,8 @@ function copy(arrayCopy, originalArray){
     }
     return arrayCopy;
 }
-let copy1 = [];
+
+let copy1 = []; // rename the new copy
 copy(copy1, originalFlavors);
 console.log("Copy of array:", copy1);
 
