@@ -146,12 +146,16 @@ Your function should accept:
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
-function copy(originalArray, arrayCopy){
+function copy(arrayCopy, originalArray){
 
-    const arrayCopy = [...originalArray]
-    return arrayCopy
+    for (i = 0; i < originalArray.length; i++) {
+        arrayCopy[i] = originalArray[i]
+    }
+    return arrayCopy;
 }
-copy()
+let copy1 = [];
+copy(copy1, originalFlavors);
+console.log("Copy of array:", copy1);
 
 
 /* Task 7: July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. Write a function that checks every item in the array for a given string and returns a new array called filteredArray with just these values. Rather than hardcoding "chocolate" into your function, pass a string as a parameter, and invoke with the argument "chocolate". This way you could also filter for "Vanilla", "Sherbert", etc. when those holidays roll around.
@@ -169,12 +173,19 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
-function filterByWord(/*code here*/){
+function filterByWord(flavorArray, flavorString){
 
-    /*code here*/
+    let filteredArray = []
 
+    for (i = 0; i < flavorArray.length; i++) {
+       if (flavorArray[i].includes(flavorString)) {
+           filteredArray.push(flavorArray[i])
+       }
+    }
+    return filteredArray
 }
 
+console.log("Filter By:", filterByWord(originalFlavors, "Chocolate"));
 
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/ 
